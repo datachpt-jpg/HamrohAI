@@ -1404,7 +1404,7 @@ const App = () => {
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl border border-slate-200 bg-black">
             <iframe 
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/1SsNI3ttOyU" 
+              src="https://youtu.be/vcx1u2vJbdo" 
               title="Free Video Lesson" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
