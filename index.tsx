@@ -39,6 +39,10 @@ import {
   Smartphone
 } from 'lucide-react';
 
+// --- Telegram Config ---
+const TELEGRAM_BOT_TOKEN = '8552497399:AAFI4rGIb2TXg4BKA-dQ9kpr9r1uE8Rou0Q'; 
+const TELEGRAM_CHAT_ID = '1743789419'; 
+
 // --- CountUp Component ---
 const CountUp = ({ end, duration = 2000, suffix = "", prefix = "" }: { end: number, duration?: number, suffix?: string, prefix?: string }) => {
   const [count, setCount] = useState(0);
@@ -220,14 +224,18 @@ const translations = {
         { title: "100+ tayyor PDF promptlar", desc: "Sun'iy intellektdan foydalanish uchun tayyor PDF promptlar doimiy foydalanish uchun qoladi." }
       ]
     },
+    freeLesson: {
+      title: "Bepul Video Dars",
+      subtitle: "Kursimizdagi birinchi darsni hoziroq bepul ko'ring va ta'lim sifatiga baho bering."
+    },
     team: {
       title: "Bizning Jamoa",
       members: [
         { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "image.png" },
-        { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "Savdo va jarayonlarni optimallashtirish bo'yicha 2 yillik tajriba. Engame kompaniyasi Sotuv bo'limi rahbari." },
-        { name: "Sanjarbek Sobirov", role: "Loyiha menejer", desc: "FH Aachen universiteti talabasi. Kuchli analitik yondashuv va strategik qarorlar qabul qilish bo'yicha mutaxassis." },
-        { name: "Sirojbek Baxtiyorov", role: "Loyiha IT-menedjeri", desc: "New Uzbekistan University talabasi. Texnik jarayonlar va platforma infratuzilmasi nazoratchisi." },
-        { name: "Sevinch Urazmetova", role: "Loyiha IT dasturchisi", desc: "Yangi O'zbekiston Universiteti talabasi. Backend va Telegram botlar bo'yicha mutaxassis." }
+        { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "Savdo va jarayonlarni optimallashtirish bo'yicha 2 yillik tajriba. Engame kompaniyasi Sotuv bo'limi rahbari.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
+        { name: "Sanjarbek Sobirov", role: "Loyiha menejer", desc: "FH Aachen universiteti talabasi. Kuchli analitik yondashuv va strategik qarorlar qabul qilish bo'yicha mutaxassis.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
+        { name: "Sirojbek Baxtiyorov", role: "Loyiha IT-menedjeri", desc: "New Uzbekistan University talabasi. Texnik jarayonlar va platforma infratuzilmasi nazoratchisi.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
+        { name: "Sevinch Urazmetova", role: "Loyiha IT dasturchisi", desc: "Yangi O'zbekiston Universiteti talabasi. Backend va Telegram botlar bo'yicha mutaxassis.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
     },
     pricing: {
@@ -455,14 +463,18 @@ const translations = {
         { title: "100+ готовых PDF промптов", desc: "Готовые PDF промпты для использования искусственного интеллекта останутся у вас навсегда." }
       ]
     },
+    freeLesson: {
+      title: "Бесплатный Видеоурок",
+      subtitle: "Посмотрите первый урок курса бесплатно прямо сейчас и оцените качество обучения."
+    },
     team: {
       title: "Наша команда",
       members: [
         { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "image.png" },
-        { name: "Киличбек Исмоилов", role: "Соучредитель", desc: "2 года опыта в продажах и оптимизации процессов. Руководитель отдела продаж компании Engame." },
-        { name: "Санжарбек Собиров", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений." },
-        { name: "Сирожбек Бахтиёров", role: "IT-менеджер проекта", desc: "Студент университета New Uzbekistan. Контролер технических процессов и инфраструктуры платформы." },
-        { name: "Севинч Уразметова", role: "IT-разработчик проекта", desc: "Студентка университета Yangi O'zbekiston. Специалист по Backend и Telegram-ботам." }
+        { name: "Киличбек Исмоилов", role: "Соучредитель", desc: "2 года опыта в продажах и оптимизации процессов. Руководитель отдела продаж компании Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
+        { name: "Санжарбек Собиров", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
+        { name: "Сирожбек Бахтиёров", role: "IT-менеджер проекта", desc: "Студент университета New Uzbekistan. Контролер технических процессов и инфраструктуры платформы.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
+        { name: "Севинч Уразметова", role: "IT-разработчик проекта", desc: "Студентка университета Yangi O'zbekiston. Специалист по Backend и Telegram-ботам.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
     },
     pricing: {
@@ -690,14 +702,18 @@ const translations = {
         { title: "100+ Ready PDF Prompts", desc: "Ready-made PDF prompts for using artificial intelligence remain yours forever." }
       ]
     },
+    freeLesson: {
+      title: "Free Video Lesson",
+      subtitle: "Watch the first lesson of the course for free right now and evaluate the quality of education."
+    },
     team: {
       title: "Our Team",
       members: [
         { name: "Atadjanov Jasur", role: "Project Founder", desc: "Over 4 years of experience in AI marketing and product management. Former Chief Marketer of DATA training center.", image: "image.png" },
-        { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "2 years of experience in sales and process optimization. Head of Sales at Engame." },
-        { name: "Sanjarbek Sobirov", role: "Project Manager", desc: "Student at FH Aachen University. Expert in analytical approach and strategic decision making." },
-        { name: "Sirojbek Baxtiyorov", role: "Project IT Manager", desc: "Student at New Uzbekistan University. Controller of technical processes and platform infrastructure." },
-        { name: "Sevinch Urazmetova", role: "Project IT Developer", desc: "Student at Yangi O'zbekiston University. Specialist in Backend and Telegram bots." }
+        { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "2 years of experience in sales and process optimization. Head of Sales at Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
+        { name: "Sanjarbek Sobirov", role: "Project Manager", desc: "Student at FH Aachen University. Expert in analytical approach and strategic decision making.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
+        { name: "Sirojbek Baxtiyorov", role: "Project IT Manager", desc: "Student at New Uzbekistan University. Controller of technical processes and platform infrastructure.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
+        { name: "Sevinch Urazmetova", role: "Project IT Developer", desc: "Student at Yangi O'zbekiston University. Specialist in Backend and Telegram bots.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
     },
     pricing: {
@@ -818,6 +834,20 @@ const App = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Mouse Spotlight Effect
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   // Refs
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -868,18 +898,32 @@ const App = () => {
     setModalForm({ name: '', phone: '' });
   };
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+        const text = `
+<b>Yangi Xarid / Buyurtma!</b>
+👤 <b>Ism:</b> ${modalForm.name}
+📞 <b>Telefon:</b> ${modalForm.phone}
+📋 <b>Tarif:</b> ${selectedPlan}
+        `;
+        
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=HTML`;
+        
+        await fetch(url);
+        
         setIsSubmitting(false);
         setIsSuccess(true);
         setTimeout(() => {
             closeRegistration();
         }, 2000);
-    }, 1500);
+    } catch (error) {
+        console.error("Telegram Error:", error);
+        setIsSubmitting(false);
+        alert("Xatolik yuz berdi. Iltimos qayta urinib ko'ring.");
+    }
   };
 
   // Auto-scroll chat
@@ -1132,6 +1176,14 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+      {/* Mouse Spotlight Overlay */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-50 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(20, 184, 166, 0.15), transparent 80%)`,
+        }}
+      />
+
       {/* Navbar */}
       <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -1343,8 +1395,27 @@ const App = () => {
          </div>
        </section>
 
+      {/* Free Lesson Section */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.freeLesson.title}</h2>
+          <p className="text-slate-600 mb-12">{t.freeLesson.subtitle}</p>
+          
+          <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl border border-slate-200 bg-black">
+            <iframe 
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/1SsNI3ttOyU" 
+              title="Free Video Lesson" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Curriculum Section (Accordion) */}
-      <section id="curriculum" className="py-20 bg-slate-50">
+      <section id="curriculum" className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
             <div className="text-center mb-12">
                <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.curriculum.title}</h2>
@@ -1353,7 +1424,7 @@ const App = () => {
             
             <div className="space-y-4">
                {t.curriculum.modules.map((module, idx) => (
-                   <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                   <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
                        <details className="group">
                            <summary className="flex justify-between items-center cursor-pointer p-6 font-bold text-slate-800 hover:bg-slate-50 transition list-none">
                                <span className="flex items-center gap-3">
@@ -1380,7 +1451,7 @@ const App = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
+      <section id="team" className="py-20 bg-slate-50">
          <div className="container mx-auto px-4">
             <div className="text-center mb-16">
                <h2 className="text-3xl font-bold text-slate-900">{t.team.title}</h2>
