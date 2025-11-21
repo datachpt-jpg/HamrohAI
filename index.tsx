@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
@@ -111,7 +110,7 @@ const translations = {
       titleHighlight: "professional",
       titleSuffix: "darajada o'rganing",
       subtitle: "10+ zamonaviy AI platformalarini o‘rganish, 100+ tayyor PDF promptlar va 24/7 ishlaydigan maxsus AI yordamchi.",
-      ctaPrimary: "Kursga yozilish",
+      ctaPrimary: "Dasturga yozilish",
       ctaSecondary: "Batafsil tanishish",
       stats: {
         platforms: "AI Platformalar",
@@ -140,7 +139,7 @@ const translations = {
       ]
     },
     curriculum: {
-      title: "Kurs Strukturasi",
+      title: "Dastur Strukturasi",
       subtitle: "7 ta modul, 0 dan professional darajagacha",
       modules: [
         {
@@ -226,7 +225,7 @@ const translations = {
     },
     freeLesson: {
       title: "Bepul Video Dars",
-      subtitle: "Kursimizdagi birinchi darsni hoziroq bepul ko'ring va ta'lim sifatiga baho bering."
+      subtitle: "Dasturimizdagi birinchi darsni hoziroq bepul ko'ring va ta'lim sifatiga baho bering."
     },
     team: {
       title: "Bizning Jamoa",
@@ -279,6 +278,7 @@ const translations = {
           currency: "SO'M",
           button: "Premium xarid qilish",
           isPopular: true,
+          discountBadge: "Maxsus taklif: -20%",
           features: [
             { text: "Yordamchi ustoz (Alohida siz uchun biriktirilgan)", highlight: true },
             { text: "Partnership modeliga a'zo bo'lish", highlight: true },
@@ -324,11 +324,11 @@ const translations = {
     faq: {
         title: "Ko'p beriladigan savollar",
         items: [
-            { q: "Kurs kimlar uchun mo'ljallangan?", a: "Kursimiz sun'iy intellektni 0 dan o'rganmoqchi bo'lgan barcha uchun mos keladi. Texnik bilim yoki dasturlash ko'nikmalari talab qilinmaydi." },
+            { q: "Dastur kimlar uchun mo'ljallangan?", a: "Dasturimiz sun'iy intellektni 0 dan o'rganmoqchi bo'lgan barcha uchun mos keladi. Texnik bilim yoki dasturlash ko'nikmalari talab qilinmaydi." },
             { q: "Darslar qanday formatda o'tiladi?", a: "Darslar maxsus platformada video formatda joylashtirilgan. Siz o'zingizga qulay vaqtda ko'rib, topshiriqlarni bajarishingiz mumkin." },
             { q: "Ingliz tilini bilish shartmi?", a: "Yo'q, ingliz tilini bilish shart emas. Biz barcha vositalarni o'zbek tilida qanday ishlatishni va tarjimonlardan foydalanishni o'rgatamiz." },
-            { q: "Pulni qaytarib olish kafolati qanday ishlaydi?", a: "Agar kurs sizga ma'qul kelmasa, xarid qilganingizdan so'ng 3 kun ichida murojaat qilsangiz, pulingizni 100% qaytarib beramiz." },
-            { q: "Premium tarifidagi 'Partnership modeli' nima?", a: "Bu eng faol o'quvchilarimiz uchun imkoniyat bo'lib, kursni bitirgach Hamroh AI jamoasi bilan birga ishlash yoki loyihalarda qatnashish imkonini beradi." }
+            { q: "Pulni qaytarib olish kafolati qanday ishlaydi?", a: "Agar dastur sizga ma'qul kelmasa, xarid qilganingizdan so'ng 3 kun ichida murojaat qilsangiz, pulingizni 100% qaytarib beramiz." },
+            { q: "Premium tarifidagi 'Partnership modeli' nima?", a: "Bu eng faol o'quvchilarimiz uchun imkoniyat bo'lib, dasturni bitirgach Hamroh AI jamoasi bilan birga ishlash yoki loyihalarda qatnashish imkonini beradi." }
         ]
     }
   },
@@ -350,7 +350,7 @@ const translations = {
       titleHighlight: "профессиональном",
       titleSuffix: "уровне",
       subtitle: "Изучение 10+ современных платформ ИИ, 100+ готовых PDF промптов и круглосуточный специальный ИИ-ассистент.",
-      ctaPrimary: "Записаться на курс",
+      ctaPrimary: "Записаться на программу",
       ctaSecondary: "Подробнее",
       stats: {
         platforms: "Платформы ИИ",
@@ -379,7 +379,7 @@ const translations = {
       ]
     },
     curriculum: {
-      title: "Структура Курса",
+      title: "Структура Программы",
       subtitle: "7 модулей, с нуля до профессионального уровня",
       modules: [
         {
@@ -465,7 +465,7 @@ const translations = {
     },
     freeLesson: {
       title: "Бесплатный Видеоурок",
-      subtitle: "Посмотрите первый урок курса бесплатно прямо сейчас и оцените качество обучения."
+      subtitle: "Посмотрите первый урок программы бесплатно прямо сейчас и оцените качество обучения."
     },
     team: {
       title: "Наша команда",
@@ -478,7 +478,7 @@ const translations = {
       ]
     },
     pricing: {
-      title: "Порядок оплаты и цена курса",
+      title: "Порядок оплаты и цена программы",
       guarantee: "Гарантия возврата денег 3 дня",
       disclaimer: "Если программа вам не понравится, вы можете вернуть 100% денег в течение 3 дней",
       plans: [
@@ -518,6 +518,7 @@ const translations = {
           currency: "СУМ",
           button: "Купить Премиум",
           isPopular: true,
+          discountBadge: "Спецпредложение: -20%",
           features: [
             { text: "ЛИЧНЫЙ НАСТАВНИК (Индивидуально для вас)", highlight: true },
             { text: "Членство в партнерской модели", highlight: true },
@@ -563,11 +564,11 @@ const translations = {
     faq: {
         title: "Часто задаваемые вопросы",
         items: [
-            { q: "Для кого предназначен этот курс?", a: "Наш курс подходит всем, кто хочет изучить искусственный интеллект с нуля. Технические знания или навыки программирования не требуются." },
+            { q: "Для кого предназначена эта программа?", a: "Наша программа подходит всем, кто хочет изучить искусственный интеллект с нуля. Технические знания или навыки программирования не требуются." },
             { q: "В каком формате проходят уроки?", a: "Уроки размещены на специальной платформе в видеоформате. Вы можете смотреть их в удобное время и выполнять задания." },
             { q: "Обязательно ли знать английский язык?", a: "Нет, знание английского не обязательно. Мы учим, как использовать все инструменты на вашем языке и пользоваться переводчиками." },
-            { q: "Как работает гарантия возврата денег?", a: "Если курс вам не понравится, вы можете обратиться к нам в течение 3 дней после покупки, и мы вернем вам 100% денег." },
-            { q: "Что такое 'Партнерская модель' в тарифе Премиум?", a: "Это возможность для наших самых активных студентов работать вместе с командой Hamroh AI или участвовать в проектах после окончания курса." }
+            { q: "Как работает гарантия возврата денег?", a: "Если программа вам не понравится, вы можете обратиться к нам в течение 3 дней после покупки, и мы вернем вам 100% денег." },
+            { q: "Что такое 'Партнерская модель' в тарифе Премиум?", a: "Это возможность для наших самых активных студентов работать вместе с командой Hamroh AI или участвовать в проектах после окончания программы." }
         ]
     }
   },
@@ -589,7 +590,7 @@ const translations = {
       titleHighlight: "Professional",
       titleSuffix: "Level",
       subtitle: "Learn 10+ modern AI platforms, 100+ ready-made PDF prompts, and a 24/7 dedicated AI assistant.",
-      ctaPrimary: "Enroll in Course",
+      ctaPrimary: "Enroll in Program",
       ctaSecondary: "Learn More",
       stats: {
         platforms: "AI Platforms",
@@ -618,7 +619,7 @@ const translations = {
       ]
     },
     curriculum: {
-      title: "Course Structure",
+      title: "Program Structure",
       subtitle: "7 modules, from 0 to professional level",
       modules: [
         {
@@ -704,7 +705,7 @@ const translations = {
     },
     freeLesson: {
       title: "Free Video Lesson",
-      subtitle: "Watch the first lesson of the course for free right now and evaluate the quality of education."
+      subtitle: "Watch the first lesson of the program for free right now and evaluate the quality of education."
     },
     team: {
       title: "Our Team",
@@ -717,7 +718,7 @@ const translations = {
       ]
     },
     pricing: {
-      title: "Course Pricing and Payment",
+      title: "Program Pricing and Payment",
       guarantee: "3-Day Money Back Guarantee",
       disclaimer: "If you don't like the program, you can get 100% of your money back within 3 days",
       plans: [
@@ -757,6 +758,7 @@ const translations = {
           currency: "UZS",
           button: "Buy Premium",
           isPopular: true,
+          discountBadge: "Limited Offer: -20%",
           features: [
             { text: "PERSONAL MENTOR (Assigned specifically to you)", highlight: true },
             { text: "Partnership Model Membership", highlight: true },
@@ -802,11 +804,11 @@ const translations = {
     faq: {
         title: "Frequently Asked Questions",
         items: [
-            { q: "Who is this course intended for?", a: "Our course is suitable for everyone who wants to learn artificial intelligence from scratch. No technical knowledge or programming skills are required." },
+            { q: "Who is this program intended for?", a: "Our program is suitable for everyone who wants to learn artificial intelligence from scratch. No technical knowledge or programming skills are required." },
             { q: "What is the format of the lessons?", a: "Lessons are hosted on a special platform in video format. You can watch them at your convenience and complete assignments." },
             { q: "Is it mandatory to know English?", a: "No, knowing English is not mandatory. We teach how to use all tools in your language and how to use translators." },
-            { q: "How does the money-back guarantee work?", a: "If you don't like the course, contact us within 3 days after purchase, and we will refund 100% of your money." },
-            { q: "What is the 'Partnership Model' in the Premium plan?", a: "This is an opportunity for our most active students to work together with the Hamroh AI team or participate in projects after finishing the course." }
+            { q: "How does the money-back guarantee work?", a: "If you don't like the program, contact us within 3 days after purchase, and we will refund 100% of your money." },
+            { q: "What is the 'Partnership Model' in the Premium plan?", a: "This is an opportunity for our most active students to work together with the Hamroh AI team or participate in projects after finishing the program." }
         ]
     }
   }
@@ -1262,28 +1264,40 @@ const App = () => {
 
           {/* Animated Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition group relative">
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    10+ AI vositalarini o'rganamiz
+                </div>
                 <Layers className="w-8 h-8 text-teal-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-slate-900 mb-1">
                   <CountUp end={10} suffix="+" />
                 </div>
                 <div className="text-sm text-slate-500 font-medium">{t.hero.stats.platforms}</div>
              </div>
-             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition group relative">
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    Ishingizni osonlashtiruvchi tayyor matnlar
+                </div>
                 <FileText className="w-8 h-8 text-blue-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-slate-900 mb-1">
                   <CountUp end={100} suffix="+" />
                 </div>
                 <div className="text-sm text-slate-500 font-medium">{t.hero.stats.prompts}</div>
              </div>
-             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition group relative">
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    Har qanday savolga javob beruvchi bot
+                </div>
                 <Bot className="w-8 h-8 text-purple-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-slate-900 mb-1">
                   <CountUp end={24} suffix="/7" />
                 </div>
                 <div className="text-sm text-slate-500 font-medium">{t.hero.stats.assistant}</div>
              </div>
-             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+             <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition group relative">
+                <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    Agar yoqmasa pulingizni qaytaramiz
+                </div>
                 <ShieldCheck className="w-8 h-8 text-green-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-slate-900 mb-1">
                   <CountUp end={3} suffix={" " + t.hero.stats.guaranteeValue.split(' ')[1]} />
@@ -1404,7 +1418,7 @@ const App = () => {
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl border border-slate-200 bg-black">
             <iframe 
               className="absolute top-0 left-0 w-full h-full"
-              src="https://youtu.be/vcx1u2vJbdo?si=_jtGkDfVnKCf50mo" 
+              src="https://www.youtube.com/embed/vcx1u2vJbdo" 
               title="Free Video Lesson" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1504,6 +1518,11 @@ const App = () => {
                         </div>
                      )}
                      <div className="text-center mb-8">
+                       {(plan as any).discountBadge && (
+                           <div className="inline-block bg-red-100 text-red-600 border border-red-200 text-xs font-extrabold px-3 py-1 rounded-full mb-3 animate-pulse">
+                               {(plan as any).discountBadge}
+                           </div>
+                       )}
                         <h3 className={`text-sm font-bold uppercase tracking-wider mb-2 ${isPremium ? 'text-yellow-600' : isStandard ? 'text-teal-600' : 'text-slate-500'}`}>{plan.name}</h3>
                         <div className="text-4xl font-black text-slate-900 mb-1">{plan.price} <span className="text-lg font-medium text-slate-400">{plan.currency}</span></div>
                      </div>
