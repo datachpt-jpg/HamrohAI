@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
@@ -230,7 +231,7 @@ const translations = {
     team: {
       title: "Bizning Jamoa",
       members: [
-        { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "image.png" },
+        { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "https://ui-avatars.com/api/?name=Atadjanov+Jasur&background=0D9488&color=fff" },
         { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "Savdo va jarayonlarni optimallashtirish bo'yicha 2 yillik tajriba. Engame kompaniyasi Sotuv bo'limi rahbari.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Sanjarbek Sobirov", role: "Loyiha menejer", desc: "FH Aachen universiteti talabasi. Kuchli analitik yondashuv va strategik qarorlar qabul qilish bo'yicha mutaxassis.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Sirojbek Baxtiyorov", role: "Loyiha IT-menedjeri", desc: "New Uzbekistan University talabasi. Texnik jarayonlar va platforma infratuzilmasi nazoratchisi.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -470,7 +471,7 @@ const translations = {
     team: {
       title: "Наша команда",
       members: [
-        { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "image.png" },
+        { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "https://ui-avatars.com/api/?name=Atadjanov+Jasur&background=0D9488&color=fff" },
         { name: "Киличбек Исмоилов", role: "Соучредитель", desc: "2 года опыта в продажах и оптимизации процессов. Руководитель отдела продаж компании Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Санжарбек Собиров", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Сирожбек Бахтиёров", role: "IT-менеджер проекта", desc: "Студент университета New Uzbekistan. Контролер технических процессов и инфраструктуры платформы.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -564,11 +565,11 @@ const translations = {
     faq: {
         title: "Часто задаваемые вопросы",
         items: [
-            { q: "Для кого предназначена эта программа?", a: "Наша программа подходит всем, кто хочет изучить искусственный интеллект с нуля. Технические знания или навыки программирования не требуются." },
+            { q: "Для кого предназначен этот курс?", a: "Наш курс подходит всем, кто хочет изучить искусственный интеллект с нуля. Технические знания или навыки программирования не требуются." },
             { q: "В каком формате проходят уроки?", a: "Уроки размещены на специальной платформе в видеоформате. Вы можете смотреть их в удобное время и выполнять задания." },
             { q: "Обязательно ли знать английский язык?", a: "Нет, знание английского не обязательно. Мы учим, как использовать все инструменты на вашем языке и пользоваться переводчиками." },
-            { q: "Как работает гарантия возврата денег?", a: "Если программа вам не понравится, вы можете обратиться к нам в течение 3 дней после покупки, и мы вернем вам 100% денег." },
-            { q: "Что такое 'Партнерская модель' в тарифе Премиум?", a: "Это возможность для наших самых активных студентов работать вместе с командой Hamroh AI или участвовать в проектах после окончания программы." }
+            { q: "Как работает гарантия возврата денег?", a: "Если курс вам не понравится, вы можете обратиться к нам в течение 3 дней после покупки, и мы вернем вам 100% денег." },
+            { q: "Что такое 'Партнерская модель' в тарифе Премиум?", a: "Это возможность для наших самых активных студентов работать вместе с командой Hamroh AI или участвовать в проектах после окончания курса." }
         ]
     }
   },
@@ -710,7 +711,7 @@ const translations = {
     team: {
       title: "Our Team",
       members: [
-        { name: "Atadjanov Jasur", role: "Project Founder", desc: "Over 4 years of experience in AI marketing and product management. Former Chief Marketer of DATA training center.", image: "image.png" },
+        { name: "Atadjanov Jasur", role: "Project Founder", desc: "Over 4 years of experience in AI marketing and product management. Former Chief Marketer of DATA training center.", image: "https://ui-avatars.com/api/?name=Atadjanov+Jasur&background=0D9488&color=fff" },
         { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "2 years of experience in sales and process optimization. Head of Sales at Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Sanjarbek Sobirov", role: "Project Manager", desc: "Student at FH Aachen University. Expert in analytical approach and strategic decision making.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Sirojbek Baxtiyorov", role: "Project IT Manager", desc: "Student at New Uzbekistan University. Controller of technical processes and platform infrastructure.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -1192,7 +1193,7 @@ const App = () => {
           <div className="flex items-center gap-2">
              <div className="relative w-10 h-10 rounded-full overflow-hidden bg-teal-500/10 flex items-center justify-center">
                 <img 
-                  src="1.webp" 
+                  src="/1.webp" 
                   alt="Hamroh AI" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -1562,7 +1563,7 @@ const App = () => {
                <div className="flex items-center gap-4">
                    <div className="relative w-16 h-16 rounded-full overflow-hidden bg-teal-500/10 flex items-center justify-center">
                         <img 
-                          src="1.webp" 
+                          src="/1.webp" 
                           alt="Hamroh AI" 
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -1623,7 +1624,7 @@ const App = () => {
           <div className="flex justify-center items-center gap-2 mb-8">
              <div className="relative w-10 h-10 rounded-full overflow-hidden bg-teal-500/10 flex items-center justify-center">
                 <img 
-                  src="1.webp" 
+                  src="/1.webp" 
                   alt="Hamroh AI" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
