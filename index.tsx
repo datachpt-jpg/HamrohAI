@@ -41,7 +41,8 @@ import {
   Banknote,
   UserCheck,
   AlertTriangle,
-  Rocket
+  Rocket,
+  ClipboardCheck
 } from 'lucide-react';
 
 // --- Telegram Config ---
@@ -257,6 +258,14 @@ const translations = {
         { name: "Sirojbek Baxtiyorov", role: "Loyiha IT-menedjeri", desc: "New Uzbekistan University talabasi. Texnik jarayonlar va platforma infratuzilmasi nazoratchisi.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
         { name: "Sevinch Urazmetova", role: "Loyiha IT dasturchisi", desc: "Yangi O'zbekiston Universiteti talabasi. Backend va Telegram botlar bo'yicha mutaxassis.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
+    },
+    pricingTrust: {
+      title: "HamrohAI narxlari — 40+ insonning o‘zi belgilagan adolatli qiymat",
+      subtitle: "Biz dastur narxini shunchaki “bozorni kuzatib” qo‘ymadik. 40 dan ortiq turli sohada ishlaydigan odamlar bilan so‘rov o‘tkazdik va ularning dastur uchun necha pul to‘lashga tayyorligini so‘radik.",
+      p1: "So‘rovnomada qatnashganlar dastur narxini 100 000 so‘mdan 2 000 000 so‘mgacha baholashdi. Kimdir 100–150 ming dedi, kimdir 200–400 ming, boshqalar 600–800 ming, hatto 1,5–2 million so‘m deb javob berdi. Bu raqamlar — haqiqiy odamlarning real fikrlari.",
+      p2: "Biz yuqori va past takliflarni tahlil qilib, o‘rtacha adolatli qiymatni hisobladik va HamrohAI dasturining narxini aynan shu o‘rtacha, mantiqli diapazonga joylashtirdik. Shuning uchun bu narx tasodifiy emas — bozorga, sizning darajangizga va dastur beradigan foydaga moslashtirilgan.",
+      p3: "Siz ko‘rayotgan narx — biz o‘ylab topgan son emas. Bu 40+ o‘qituvchi, davlat xizmatchisi, xususiy sektor vakillari va boshqa kasb egalari tomonidan aytilgan “haqiqatga eng yaqin” narxning optimallashtirilgan ko‘rinishi.",
+      badge: "Narxlar — 40+ respondentning real takliflariga asoslangan."
     },
     pricing: {
       title: "Dastur to'lov tartibi va narxi",
@@ -508,10 +517,18 @@ const translations = {
       members: [
         { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "/Jasur.jpg" },
         { name: "Киличбек Исмоилов", role: "Соучредитель", desc: "2 года опыта в продажах и оптимизации процессов. Руководитель отдела продаж компании Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
-        { name: "Санжарбек Собиров", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
+        { name: "Sanjarbek Sobirov", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Сирожбек Бахтиёров", role: "IT-менеджер проекта", desc: "Студент университета New Uzbekistan. Контролер технических процессов и инфраструктуры платформы.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
         { name: "Севинч Уразметова", role: "IT-разработчик проекта", desc: "Студентка университета Yangi O'zbekiston. Специалист по Backend и Telegram-ботам.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
+    },
+    pricingTrust: {
+      title: "Цены HamrohAI — справедливая стоимость, определенная 40+ людьми",
+      subtitle: "Мы не просто поставили цену, «глядя на рынок». Мы провели опрос среди более чем 40 человек из разных сфер и спросили, сколько они готовы платить за программу.",
+      p1: "Участники опроса оценили стоимость программы от 100 000 до 2 000 000 сумов. Кто-то сказал 100–150 тысяч, кто-то 200–400 тысяч, другие 600–800 тысяч и даже 1,5–2 миллиона сумов. Эти цифры — реальные мнения реальных людей.",
+      p2: "Мы проанализировали высокие и низкие предложения, рассчитали среднюю справедливую стоимость и установили цену программы HamrohAI именно в этом среднем, логичном диапазоне. Поэтому эта цена не случайна — она адаптирована к рынку, вашему уровню и пользе, которую дает программа.",
+      p3: "Цена, которую вы видите — это не цифра, которую мы придумали. Это оптимизированный вид цены, названной «наиболее близкой к истине» 40+ учителями, госслужащими, представителями частного сектора и других профессий.",
+      badge: "Цены основаны на реальных предложениях 40+ респондентов."
     },
     pricing: {
       title: "Порядок оплаты и цена программы",
@@ -767,6 +784,14 @@ const translations = {
         { name: "Sirojbek Baxtiyorov", role: "Project IT Manager", desc: "Student at New Uzbekistan University. Controller of technical processes and platform infrastructure.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
         { name: "Sevinch Urazmetova", role: "Project IT Developer", desc: "Student at Yangi O'zbekiston University. Specialist in Backend and Telegram bots.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
+    },
+    pricingTrust: {
+      title: "HamrohAI Prices — Fair value determined by 40+ people",
+      subtitle: "We didn't just set the program price by \"looking at the market\". We surveyed over 40 people from various fields and asked how much they would be willing to pay for the program.",
+      p1: "Survey participants estimated the program price from 100,000 to 2,000,000 UZS. Some said 100-150k, some 200-400k, others 600-800k, and even 1.5-2 million UZS. These figures are real opinions of real people.",
+      p2: "We analyzed high and low offers, calculated the average fair value, and set the HamrohAI program price exactly in this average, logical range. Therefore, this price is not random — it is adapted to the market, your level, and the benefits the program provides.",
+      p3: "The price you see is not a number we invented. It is an optimized version of the price called \"closest to the truth\" by 40+ teachers, civil servants, private sector representatives, and other professionals.",
+      badge: "Prices are based on real offers from 40+ respondents."
     },
     pricing: {
       title: "Program Pricing and Payment",
@@ -1583,6 +1608,24 @@ const App = () => {
                ))}
             </div>
          </div>
+      </section>
+
+      {/* Pricing Trust Section (New) */}
+      <section className="py-16 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-4">
+           <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 p-8 md:p-12 text-center">
+              <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6 border border-teal-100">
+                 <Users className="w-4 h-4" /> {(t as any).pricingTrust.badge}
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{(t as any).pricingTrust.title}</h2>
+              <h4 className="text-lg text-slate-700 font-medium mb-8 max-w-2xl mx-auto">{(t as any).pricingTrust.subtitle}</h4>
+              <div className="text-slate-600 space-y-4 leading-relaxed text-left md:text-justify max-w-3xl mx-auto">
+                 <p>{(t as any).pricingTrust.p1}</p>
+                 <p>{(t as any).pricingTrust.p2}</p>
+                 <p className="font-medium text-slate-800">{(t as any).pricingTrust.p3}</p>
+              </div>
+           </div>
+        </div>
       </section>
 
       {/* Pricing Section */}
