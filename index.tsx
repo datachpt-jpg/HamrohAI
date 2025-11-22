@@ -42,7 +42,8 @@ import {
   UserCheck,
   AlertTriangle,
   Rocket,
-  ClipboardCheck
+  ClipboardCheck,
+  ExternalLink
 } from 'lucide-react';
 
 // --- Telegram Config ---
@@ -95,6 +96,119 @@ const CountUp = ({ end, duration = 2000, suffix = "", prefix = "" }: { end: numb
   );
 };
 
+// --- Research Slider Data ---
+const researchSlides = [
+  {
+    title: "McKinsey Global Institute (2024)",
+    fact: "AI bilan ishlayotgan xodimlar 3–10 baravar tezroq natija bermoqda.",
+    link: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai"
+  },
+  {
+    title: "LinkedIn Job Report (2024)",
+    fact: "AI ko‘nikmasiga ega xodimlar 20–60% yuqori maosh olmoqda.",
+    link: "https://www.linkedin.com/pulse/linkedin-jobs-ai-report-2024"
+  },
+  {
+    title: "World Economic Forum – Future of Jobs",
+    fact: "Kasb vazifalarining 45% avtomatlashtiriladi, AI eng tez o‘sayotgan ko‘nikma.",
+    link: "https://www.weforum.org/reports/the-future-of-jobs-report-2023/"
+  },
+  {
+    title: "Harvard Business Review (2023)",
+    fact: "AI ko‘nikmasi bor xodimlar 2x tez lavozim ko‘tarilishiga erishmoqda.",
+    link: "https://hbr.org/2023/08/how-generative-ai-is-changing-the-way-teams-work"
+  },
+  {
+    title: "UNESCO / TeacherAI Education Report (2024)",
+    fact: "O‘qituvchilar AI orqali haftasiga 6–12 soat vaqt tejamoqda.",
+    link: "https://unesdoc.unesco.org/ark:/48223/pf0000386694"
+  }
+];
+
+// --- Research Slider Component ---
+const ResearchSlider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timeoutRef = useRef<any>(null);
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  useEffect(() => {
+    resetTimeout();
+    if (!isPaused) {
+      timeoutRef.current = setTimeout(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === researchSlides.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 5000);
+    }
+    return () => resetTimeout();
+  }, [currentIndex, isPaused]);
+
+  return (
+    <section className="py-16 bg-white border-t border-slate-100">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+            Global Tadqiqotlar va Faktlar
+          </h2>
+          <p className="text-slate-500 mt-2 text-sm">Dunyo bo'yicha nufuzli tashkilotlarning AI haqidagi xulosalari</p>
+        </div>
+
+        <div 
+          className="relative max-w-4xl mx-auto overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div 
+            className="flex transition-transform duration-700 ease-in-out" 
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {researchSlides.map((slide, index) => (
+              <div key={index} className="w-full flex-shrink-0 px-4">
+                <div className="bg-slate-50 rounded-2xl shadow-sm p-8 border border-slate-100 text-center hover:shadow-md transition-shadow h-full flex flex-col justify-center items-center">
+                  <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-4">
+                    {slide.title}
+                  </h3>
+                  <h5 className="text-lg md:text-2xl text-slate-700 font-medium mb-6 leading-relaxed">
+                    "{slide.fact}"
+                  </h5>
+                  <a 
+                    href={slide.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:text-teal-700 hover:underline transition-colors"
+                  >
+                    Batafsil o'qish <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {researchSlides.map((_, idx) => (
+              <button
+                key={idx}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === idx ? "w-8 bg-teal-500" : "w-2 bg-slate-300 hover:bg-teal-300"
+                }`}
+                onClick={() => setCurrentIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // --- Translations ---
 type Language = 'uz' | 'en' | 'ru';
 
@@ -113,9 +227,9 @@ const translations = {
       formatValue: "Gibrid onlayn",
       durationLabel: "Davomiyligi:",
       durationValue: "1 oy",
-      titlePrefix: "Sun'iy intellekt dasturlarini",
-      titleHighlight: "professional",
-      titleSuffix: "darajada o'rganing",
+      titlePrefix: "Sun'iy intellekt dasturlarini bilganlar",
+      titleHighlight: "20–60% ko‘proq",
+      titleSuffix: "maosh oladi.",
       subtitle: "10+ zamonaviy AI platformalarini o‘rganish, 100+ tayyor PDF promptlar va 24/7 ishlaydigan maxsus AI yordamchi.",
       ctaPrimary: "Dasturga yozilish",
       ctaSecondary: "Batafsil tanishish",
@@ -517,7 +631,7 @@ const translations = {
       members: [
         { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "/Jasur.jpg" },
         { name: "Киличбек Исмоилов", role: "Соучредитель", desc: "2 года опыта в продажах и оптимизации процессов. Руководитель отдела продаж компании Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
-        { name: "Sanjarbek Sobirov", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
+        { name: "Санжарбек Собиров", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Сирожбек Бахтиёров", role: "IT-менеджер проекта", desc: "Студент университета New Uzbekistan. Контролер технических процессов и инфраструктуры платформы.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
         { name: "Севинч Уразметова", role: "IT-разработчик проекта", desc: "Студентка университета Yangi O'zbekiston. Специалист по Backend и Telegram-ботам.", image: "https://ui-avatars.com/api/?name=Sevinch+Urazmetova&background=0D9488&color=fff" }
       ]
@@ -1610,7 +1724,10 @@ const App = () => {
          </div>
       </section>
 
-      {/* Pricing Trust Section (New) */}
+      {/* Research Slider Section */}
+      <ResearchSlider />
+
+      {/* Pricing Trust Section */}
       <section className="py-16 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-4">
            <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 p-8 md:p-12 text-center">
