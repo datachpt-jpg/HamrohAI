@@ -231,7 +231,7 @@ const translations = {
     team: {
       title: "Bizning Jamoa",
       members: [
-        { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "https://ui-avatars.com/api/?name=Atadjanov+Jasur&background=0D9488&color=fff" },
+        { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "./Jasur.jpg" },
         { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "Savdo va jarayonlarni optimallashtirish bo'yicha 2 yillik tajriba. Engame kompaniyasi Sotuv bo'limi rahbari.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Sanjarbek Sobirov", role: "Loyiha menejer", desc: "FH Aachen universiteti talabasi. Kuchli analitik yondashuv va strategik qarorlar qabul qilish bo'yicha mutaxassis.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Sirojbek Baxtiyorov", role: "Loyiha IT-menedjeri", desc: "New Uzbekistan University talabasi. Texnik jarayonlar va platforma infratuzilmasi nazoratchisi.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -471,7 +471,7 @@ const translations = {
     team: {
       title: "Наша команда",
       members: [
-        { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "https://ui-avatars.com/api/?name=Atadjanov+Jasur&background=0D9488&color=fff" },
+        { name: "Атаджанов Жасур", role: "Основатель проекта", desc: "Более 4 лет опыта в AI маркетинге и управлении продуктами. Бывший главный маркетолог учебного центра DATA.", image: "/Jasur.jpg" },
         { name: "Киличбек Исмоилов", role: "Соучредитель", desc: "2 года опыта в продажах и оптимизации процессов. Руководитель отдела продаж компании Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Санжарбек Собиров", role: "Менеджер проекта", desc: "Студент университета FH Aachen. Эксперт по аналитическому подходу и принятию стратегических решений.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Сирожбек Бахтиёров", role: "IT-менеджер проекта", desc: "Студент университета New Uzbekistan. Контролер технических процессов и инфраструктуры платформы.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -711,7 +711,7 @@ const translations = {
     team: {
       title: "Our Team",
       members: [
-        { name: "Atadjanov Jasur", role: "Project Founder", desc: "Over 4 years of experience in AI marketing and product management. Former Chief Marketer of DATA training center.", image: "https://ui-avatars.com/api/?name=Atadjanov+Jasur&background=0D9488&color=fff" },
+        { name: "Atadjanov Jasur", role: "Project Founder", desc: "Over 4 years of experience in AI marketing and product management. Former Chief Marketer of DATA training center.", image: "/Jasur.jpg" },
         { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "2 years of experience in sales and process optimization. Head of Sales at Engame.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Sanjarbek Sobirov", role: "Project Manager", desc: "Student at FH Aachen University. Expert in analytical approach and strategic decision making.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Sirojbek Baxtiyorov", role: "Project IT Manager", desc: "Student at New Uzbekistan University. Controller of technical processes and platform infrastructure.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -905,6 +905,9 @@ const App = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Alert to confirm function execution
+    alert("Ma'lumotlar yuborilmoqda...");
+
     try {
         const text = `
 <b>Yangi Xarid / Buyurtma!</b>
@@ -915,17 +918,23 @@ const App = () => {
         
         const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=HTML`;
         
-        await fetch(url);
+        const response = await fetch(url);
         
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setTimeout(() => {
-            closeRegistration();
-        }, 2000);
+        if (response.ok) {
+            alert("Muvaffaqiyatli yuborildi!");
+            setIsSubmitting(false);
+            setIsSuccess(true);
+            setTimeout(() => {
+                closeRegistration();
+            }, 2000);
+        } else {
+            alert("Xatolik: Telegramga ulanib bo'lmadi.");
+            setIsSubmitting(false);
+        }
     } catch (error) {
         console.error("Telegram Error:", error);
+        alert("Xatolik yuz berdi: " + (error as Error).message);
         setIsSubmitting(false);
-        alert("Xatolik yuz berdi. Iltimos qayta urinib ko'ring.");
     }
   };
 
@@ -1419,7 +1428,7 @@ const App = () => {
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl border border-slate-200 bg-black">
             <iframe 
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/vcx1u2vJbdo" 
+              src="https://youtu.be/x0Gki2F2KdA" 
               title="Free Video Lesson" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -1476,11 +1485,15 @@ const App = () => {
                {t.team.members.map((member, idx) => (
                   <div key={idx} className="w-full sm:w-[48%] md:w-[30%] lg:w-[18%] text-center group">
                      <div className="w-24 h-24 mx-auto bg-gradient-to-br from-teal-400 to-blue-500 rounded-full mb-4 flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition duration-300 overflow-hidden">
-                        {(member as any).image ? (
-                            <img src={(member as any).image} alt={member.name} className="w-full h-full object-cover" />
-                        ) : (
-                            member.name.charAt(0)
-                        )}
+                        <img 
+                            src={(member as any).image} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                                e.currentTarget.onerror = null; 
+                                e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=0D9488&color=fff`;
+                            }}
+                        />
                      </div>
                      <h3 className="text-lg font-bold text-slate-900">{member.name}</h3>
                      <p className="text-teal-500 text-xs font-bold uppercase tracking-wide mb-3">{member.role}</p>
