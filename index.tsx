@@ -36,7 +36,12 @@ import {
   Sparkles,
   ArrowUp,
   User,
-  Smartphone
+  Smartphone,
+  TrendingUp,
+  Banknote,
+  UserCheck,
+  AlertTriangle,
+  Rocket
 } from 'lucide-react';
 
 // --- Telegram Config ---
@@ -137,6 +142,21 @@ const translations = {
         { id: "02", title: "Ishlatish uchun ingliz tili kerak bo'ladi" },
         { id: "03", title: "Texnik bilmim yo'q" },
         { id: "04", title: "O'rganishga vaqt bo'lmaydi" }
+      ]
+    },
+    whyNow: {
+      title: "Nega aynan hozir AI o‘rganish kerak?",
+      subtitle: "9 ta haqiqiy sabab",
+      items: [
+        { title: "Bozor o‘zgaryapti", desc: "Bugun ishlayotgan kasblarning katta qismi 3–5 yilda avtomatlasadi. AI bilganlar esa yo‘qolib ketmaydi — eng ko‘p talab qilinadigan odamga aylanadi." },
+        { title: "Yuqori daromad", desc: "AI ko‘nikmasiga ega xodimlar 20–60% yuqori maosh oladi. Oddiy xodim emas — qimmat mutaxassis bo‘lasiz." },
+        { title: "3-5 baravar tezlik", desc: "Hisobot, reklama, matn, dizayn... Oldin 3 soat ketgan ish AI bilan 15 daqiqaga tushadi. Vaqt — pul." },
+        { title: "Kelajak savodi", desc: "Ingliz tili hamon muhim. Ammo 2026–2030-yillarda asosiy ko‘nikma: AI bilan ishlay olish bo'ladi." },
+        { title: "Yosh bo‘lish shart emas", desc: "ChatGPT, Gemini va boshqalar kod bilishni talab qilmaydi, murakkab emas, yoshi kattalar ham tez o‘rganadi." },
+        { title: "Xarajatlarni qisqartirish", desc: "SMM, Reklama, Dizayn uchun alohida odam yollash shart bo‘lmay qoladi. AI oylik xarajatlarni 30–50% qisqartiradi." },
+        { title: "Raqobatdan tushib qolmang", desc: "Bugun AIga moslashganlar yutmoqda. Moslashgan ishlaydi. Moslashmagan — ishdan ketadi." },
+        { title: "Tajribangizni kuchaytiradi", desc: "AI sizdagi bilimni 10 baravar kuchaytiradi. Sizning o‘rningizni bosmaydi — u sizning superqurolingiz." },
+        { title: "Kelajakdagi xavfsizlik", desc: "AI bilgan odamning qo‘li hech qachon ishda qolmaydi. Bu — 5–10 yillik kafolatlangan barqarorlik." }
       ]
     },
     curriculum: {
@@ -379,6 +399,21 @@ const translations = {
         { id: "04", title: "Нет времени на изучение из-за работы" }
       ]
     },
+    whyNow: {
+      title: "Почему нужно изучать ИИ именно сейчас?",
+      subtitle: "9 реальных причин",
+      items: [
+        { title: "Рынок меняется", desc: "40% профессий адаптируются к ИИ. Знающие ИИ станут самыми востребованными." },
+        { title: "Высокий доход", desc: "Сотрудники с навыками ИИ получают на 20–60% больше. Станьте дорогим специалистом." },
+        { title: "Скорость 3-5x", desc: "Работа, занимавшая 3 часа, выполняется за 15 минут. Время — деньги." },
+        { title: "Грамотность будущего", desc: "В 2026–2030 годах главным навыком будет умение работать с ИИ, а не просто английский." },
+        { title: "Возраст не важен", desc: "ChatGPT и другие платформы просты и не требуют кода. Взрослые учатся быстро." },
+        { title: "Сокращение расходов", desc: "ИИ заменяет отдельных специалистов по SMM, рекламе и дизайну, сокращая расходы на 30-50%." },
+        { title: "Будьте впереди конкурентов", desc: "Кто адаптируется к ИИ — выигрывает. Кто нет — теряет работу." },
+        { title: "Усиление опыта", desc: "ИИ усиливает ваши знания в 10 раз. Это не замена вам, а ваше супероружие." },
+        { title: "Безопасность в будущем", desc: "Человек, знающий ИИ, никогда не останется без работы. Гарантия стабильности на 5-10 лет." }
+      ]
+    },
     curriculum: {
       title: "Структура Программы",
       subtitle: "7 модулей, с нуля до профессионального уровня",
@@ -617,6 +652,21 @@ const translations = {
         { id: "02", title: "English is needed to use it" },
         { id: "03", title: "I have no technical knowledge" },
         { id: "04", title: "No time to learn due to work" }
+      ]
+    },
+    whyNow: {
+      title: "Why learn AI right now?",
+      subtitle: "9 real reasons",
+      items: [
+        { title: "Market is changing", desc: "40% of jobs are adapting to AI. Those who know AI will be in high demand." },
+        { title: "Higher Income", desc: "Employees with AI skills earn 20-60% more. Become a high-value specialist." },
+        { title: "3-5x Speed", desc: "Work that took 3 hours now takes 15 minutes. Time is money." },
+        { title: "Future Literacy", desc: "By 2026-2030, the main skill will be working with AI, not just English." },
+        { title: "Age doesn't matter", desc: "ChatGPT and others don't require coding and are simple. Adults learn fast." },
+        { title: "Cost Reduction", desc: "AI reduces monthly costs by 30-50% by automating SMM, ads, and design." },
+        { title: "Stay Competitive", desc: "Those who adapt to AI win. Those who don't risk losing their jobs." },
+        { title: "Enhance Experience", desc: "AI amplifies your knowledge 10x. It's your superweapon, not a replacement." },
+        { title: "Future Security", desc: "Knowing AI ensures job stability for the next 5-10 years." }
       ]
     },
     curriculum: {
@@ -1394,8 +1444,39 @@ const App = () => {
          </div>
       </section>
 
+      {/* Why Now Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.whyNow.title}</h2>
+            <p className="text-slate-600 font-medium">{t.whyNow.subtitle}</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {t.whyNow.items.map((item, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-500 hover:shadow-md transition group">
+                <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-teal-500 transition">
+                  {/* Icon Mapping based on index */}
+                  {idx === 0 && <TrendingUp className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 1 && <Banknote className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 2 && <Zap className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 3 && <BookOpen className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 4 && <UserCheck className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 5 && <Briefcase className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 6 && <AlertTriangle className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 7 && <Rocket className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                  {idx === 8 && <ShieldCheck className="w-6 h-6 text-teal-500 group-hover:text-white" />}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
        {/* Solution Section */}
-       <section className="py-20 bg-white">
+       <section className="py-20 bg-slate-50">
          <div className="container mx-auto px-4">
             <div className="text-center mb-16">
                <h2 className="text-3xl font-bold text-slate-900">
@@ -1405,7 +1486,7 @@ const App = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
                {t.solution.items.map((item, idx) => (
-                  <div key={idx} className="flex gap-6 p-6 rounded-2xl hover:bg-slate-50 transition">
+                  <div key={idx} className="flex gap-6 p-6 rounded-2xl bg-white hover:shadow-md transition">
                      <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 text-teal-600">
                         {[<Download/>, <Play/>, <Users/>, <MessageCircle/>, <Bot/>, <FileText/>][idx]}
                      </div>
@@ -1420,7 +1501,7 @@ const App = () => {
        </section>
 
       {/* Free Lesson Section */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200">
+      <section className="py-20 bg-white border-y border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.freeLesson.title}</h2>
           <p className="text-slate-600 mb-12">{t.freeLesson.subtitle}</p>
@@ -1439,7 +1520,7 @@ const App = () => {
       </section>
 
       {/* Curriculum Section (Accordion) */}
-      <section id="curriculum" className="py-20 bg-white">
+      <section id="curriculum" className="py-20 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
             <div className="text-center mb-12">
                <h2 className="text-3xl font-bold text-slate-900 mb-4">{t.curriculum.title}</h2>
@@ -1475,7 +1556,7 @@ const App = () => {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-20 bg-slate-50">
+      <section id="team" className="py-20 bg-white">
          <div className="container mx-auto px-4">
             <div className="text-center mb-16">
                <h2 className="text-3xl font-bold text-slate-900">{t.team.title}</h2>
