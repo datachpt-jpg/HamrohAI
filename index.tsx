@@ -231,7 +231,7 @@ const translations = {
     team: {
       title: "Bizning Jamoa",
       members: [
-        { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "./Jasur.jpg" },
+        { name: "Atadjanov Jasur", role: "Loyiha asoschisi", desc: "4 yildan ortiq AI marketing va product management sohasida tajriba. DATA o'quv markazi sobiq bosh marketologi. 20+ loyihalar muallifi.", image: "/Jasur.jpg" },
         { name: "Qilichbek Ismoilov", role: "Co-founder", desc: "Savdo va jarayonlarni optimallashtirish bo'yicha 2 yillik tajriba. Engame kompaniyasi Sotuv bo'limi rahbari.", image: "https://ui-avatars.com/api/?name=Qilichbek+Ismoilov&background=0D9488&color=fff" },
         { name: "Sanjarbek Sobirov", role: "Loyiha menejer", desc: "FH Aachen universiteti talabasi. Kuchli analitik yondashuv va strategik qarorlar qabul qilish bo'yicha mutaxassis.", image: "https://ui-avatars.com/api/?name=Sanjarbek+Sobirov&background=0D9488&color=fff" },
         { name: "Sirojbek Baxtiyorov", role: "Loyiha IT-menedjeri", desc: "New Uzbekistan University talabasi. Texnik jarayonlar va platforma infratuzilmasi nazoratchisi.", image: "https://ui-avatars.com/api/?name=Sirojbek+Baxtiyorov&background=0D9488&color=fff" },
@@ -1428,7 +1428,7 @@ const App = () => {
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl border border-slate-200 bg-black">
             <iframe 
               className="absolute top-0 left-0 w-full h-full"
-              src="https://youtu.be/x0Gki2F2KdA?si=KKqBH6CqVbkoGW7c" 
+              src="https://www.youtube.com/embed/x0Gki2F2KdA" 
               title="Free Video Lesson" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
